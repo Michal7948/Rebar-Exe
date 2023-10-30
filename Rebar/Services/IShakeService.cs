@@ -1,7 +1,8 @@
 ﻿using Repositories.Models;
+
 namespace Services
 {
-    public interface IShakeServices
+    public interface IShakeService
     {
         List<Shake> GetList();
 

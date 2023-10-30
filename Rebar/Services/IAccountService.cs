@@ -1,7 +1,7 @@
 ﻿
 namespace Services
 {
-    public interface IAccountServices
+    public interface IAccountService
     {
     }
 }

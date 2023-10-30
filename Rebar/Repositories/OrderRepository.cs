@@ -24,7 +24,7 @@ namespace Repositories
 
         public List<Order> GetAll()
         {
-            var ordersCollection = context.ConecctToMongoDB<Order>(collectionOrder);
+            var ordersCollection = context.ConnectToMongoDB<Order>(collectionOrder);
             var results = ordersCollection.Find(_ => true);
             return results.ToList();
         }

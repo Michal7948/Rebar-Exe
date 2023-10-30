@@ -1,5 +1,6 @@
-﻿using Repositories.Models;
-
+﻿using Microsoft.Extensions.DependencyInjection;
+using Repositories.Models;
+using MongoDB.Driver;
 
 namespace Repositories
 {
@@ -9,7 +10,8 @@ namespace Repositories
         {
             serviceCollection.AddScoped<IShakeRepository, ShakeRepository>();
             serviceCollection.AddScoped<IOrderRepository, OrderRepository>();
-            serviceCollection.AddDbContext<RebarContext>(opt => opt.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\מסלול\פרוייקט WEB\Web project\DB\WebProject.mdf;Integrated Security=True;Connect Timeout=30"));
+            //serviceCollection.AddDbContext<RebarContext>(opt => opt.UseMongoDb("mongodb://localhost:27017/mydb"));
+            
             return serviceCollection;
         }
     }

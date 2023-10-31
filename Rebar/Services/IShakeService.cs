@@ -2,9 +2,9 @@
 
 namespace Services
 {
-    public interface IShakeService
+    public interface IShakeService:IServices<Shake>
     {
-        List<Shake> GetList();
+        
 
     }
 }

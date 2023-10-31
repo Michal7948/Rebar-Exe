@@ -6,37 +6,37 @@ namespace Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        string collectionOrder = "orders";
-        RebarContext context;
-        public OrderRepository(RebarContext context)
-        {
-            this.context = context;
-        }
-        public void Create(Order objToCreate)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly IMongoCollection<Order> _order;
 
-        public void Delete(int id)
+        public OrderRepository(IRebarDatabaseSettings settings, IMongoClient mongoClient)
         {
-            throw new NotImplementedException();
+            var database = mongoClient.GetDatabase(settings.DatabaseName);
+            _order = database.GetCollection<Order>(settings.OrderCollectionName);
         }
 
         public List<Order> GetAll()
         {
-            var ordersCollection = context.ConnectToMongoDB<Order>(collectionOrder);
-            var results = ordersCollection.Find(_ => true);
-            return results.ToList();
+            return _order.Find(shake => true).ToList();
         }
 
-        public Order GetById(int id)
+        public Order GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _order.Find(shake => shake.Id == id).FirstOrDefault();
         }
 
-        public void Update(Order objToUpdate)
+        public void Create(Order objToCreate)
         {
-            throw new NotImplementedException();
+            _order.InsertOne(objToCreate);
+        }
+
+        public void Update(Guid id, Order objToUpdate)
+        {
+            _order.ReplaceOne(shake => shake.Id == id, objToUpdate);
+        }
+
+        public void Delete(Guid id)
+        {
+            _order.DeleteOne(shake => shake.Id == id);
         }
     }
 }

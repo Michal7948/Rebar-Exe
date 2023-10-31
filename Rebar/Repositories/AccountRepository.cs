@@ -10,7 +10,7 @@ namespace Repositories
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -20,12 +20,12 @@ namespace Repositories
             throw new NotImplementedException();
         }
 
-        public Account GetById(int id)
+        public Account GetById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Account objToUpdate)
+        public void Update(Guid id, Account objToUpdate)
         {
             throw new NotImplementedException();
         }

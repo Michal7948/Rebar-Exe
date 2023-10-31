@@ -6,43 +6,35 @@ namespace Repositories
 {
     public class ShakeRepository : IShakeRepository
     {
-        string collectionShake = "shakes";
-
-        RebarContext context;
-        private readonly IMongoCollection<Shake> shakesCollection;
-
-        public ShakeRepository(RebarContext context)
+        private readonly IMongoCollection<Shake> _shake;
+        public ShakeRepository(IRebarDatabaseSettings settings,IMongoClient mongoClient)
         {
-            this.context = context;
-            shakesCollection = context.ConnectToMongoDB<Shake>(collectionShake);
+            var database = mongoClient.GetDatabase(settings.DatabaseName);
+            _shake= database.GetCollection<Shake>(settings.ShakeCollectionName);
         }
         public void Create(Shake objToCreate)
         {
-           shakesCollection.InsertOneAsync(objToCreate);
+            _shake.InsertOne(objToCreate);
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _shake.DeleteOne(shake => shake.Id == id);
         }
 
         public List<Shake> GetAll()
         {
-            return shakesCollection.Find(shake => true).ToList();
-            
-            //var shakesCollection = context.ConnectToMongoDB<Shake>(collectionShake);
-            //var results = shakesCollection.Find(_ => true);
-            //return results.ToList();
+           return _shake.Find(shake => true).ToList();
         }
 
-        public Shake GetById(int id)
+        public Shake GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _shake.Find(shake => shake.Id == id).FirstOrDefault();
         }
 
-        public void Update(Shake objToUpdate)
+        public void Update(Guid id,Shake objToUpdate)
         {
-            throw new NotImplementedException();
+            _shake.ReplaceOne(shake => shake.Id == id,objToUpdate);
         }
     }
 }

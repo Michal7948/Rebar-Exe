@@ -5,9 +5,9 @@ namespace Repositories
     public interface IRepository<T>
     {
         List<T> GetAll();
-        T GetById(int id);
+        T GetById(Guid id);
         void Create(T objToCreate);
-        void Update(T objToUpdate);
-        void Delete(int id);
+        void Update( Guid id,T objToUpdate);
+        void Delete(Guid id);
     }
 }

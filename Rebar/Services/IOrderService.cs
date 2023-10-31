@@ -1,8 +1,10 @@
 ﻿
 
+using Repositories.Models;
+
 namespace Services
 {
-    public interface IOrderService
+    public interface IOrderService:IServices<Order>
     {
     }
 }

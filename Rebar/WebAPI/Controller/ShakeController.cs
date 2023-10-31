@@ -9,18 +9,62 @@ namespace WebAPI.Controller
     [ApiController]
     public class ShakeController : ControllerBase
     {
-        IShakeService services;
+        IShakeService service;
         public ShakeController(IShakeService services)
         {
-            this.services = services;
+            this.service = services;
         }
 
         [HttpGet]
-        public List<Shake> GetAll()
+        public ActionResult<List<Shake>> GetAll()
         {
-            return services.GetList();
+            return service.GetList();
         }
 
-        
+        [HttpGet("{id}")]
+        public ActionResult<Shake> GetById(Guid id)
+        {
+            var shake = service.GetById(id);
+            if(shake == null)
+            {
+                return NotFound($"shake with Id = {id} not found");
+            }
+            return shake;
+        }
+
+        [HttpPost]
+        public ActionResult Post([FromBody] Shake shake)
+        {
+            service.Create(shake);
+            //return CreatedAtAction(nameof(GetById), new { id = shake.Id }, shake);
+            return Ok($"Shake with created");
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult Put(Guid id ,[FromBody] Shake shake)
+        {
+            var existingShake = service.GetById(id);
+            if (existingShake == null)
+            {
+                return NotFound($"shake with Id = {id} not found");
+            }
+            service.Update(id, shake);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(Guid id)
+        {
+            var shake = service.GetById(id);
+            if (shake == null)
+            {
+                return NotFound($"shake with Id = {id} not found");
+            }
+            service.Delete(shake.Id);
+            return Ok($"Shake with Id= {id} deleted");
+        }
+
+
+
     }
 }

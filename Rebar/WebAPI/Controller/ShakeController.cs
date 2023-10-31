@@ -20,6 +20,7 @@ namespace WebAPI.Controller
         {
             return service.GetList();
         }
+        
 
         [HttpGet("{id}")]
         public ActionResult<Shake> GetById(Guid id)

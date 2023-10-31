@@ -10,8 +10,7 @@ namespace Repositories
         {
             serviceCollection.AddScoped<IShakeRepository, ShakeRepository>();
             serviceCollection.AddScoped<IOrderRepository, OrderRepository>();
-            //serviceCollection.AddDbContext<RebarContext>(opt => opt.UseMongoDb("mongodb://localhost:27017/mydb"));
-            
+            serviceCollection.AddScoped<IDailyReportRepository, DailyReportRepository>();
             return serviceCollection;
         }
     }

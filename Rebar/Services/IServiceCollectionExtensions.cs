@@ -9,6 +9,7 @@ namespace Services
         {
             serviceCollection.AddScoped<IShakeService, ShakeService>();
             serviceCollection.AddScoped<IOrderService, OrderService>();
+            serviceCollection.AddScoped<IDailyReportService, DailyReportService>();
             serviceCollection.AddRepositories();
             return serviceCollection;
         }

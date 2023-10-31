@@ -15,17 +15,17 @@ namespace Services
         public void Create(Shake shake)
         {
             repo.Create(shake);
+            
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            repo.Delete(id);
         }
 
         public Shake GetById(Guid id)
         {
             return repo.GetById(id);
-            //throw new NotImplementedException();
         }
 
         public List<Shake> GetList()
@@ -35,7 +35,7 @@ namespace Services
 
         public void Update(Guid id,Shake shake)
         {
-            throw new NotImplementedException();
+            repo.Update(id, shake);
         }
     }
 }

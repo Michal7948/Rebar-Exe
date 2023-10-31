@@ -14,15 +14,14 @@ builder.Services.AddSingleton<IRebarDatabaseSettings>(sp =>
 builder.Services.AddSingleton<IMongoClient>(s =>
     new MongoClient(builder.Configuration.GetValue<string>("RebarDatabaseSettings:ConnectionString")));
 
-builder.Services.AddScoped<IShakeRepository, ShakeRepository>();
-builder.Services.AddScoped<IShakeService, ShakeService>();
+//builder.Services.AddScoped<IShakeRepository, ShakeRepository>();
+//builder.Services.AddScoped<IShakeService, ShakeService>();
 
 builder.Services.AddControllers();
 //builder.Services.AddCors();
-//builder.Services.AddServices();
+builder.Services.AddServices();
 
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -33,36 +32,13 @@ app.UseCors(options =>
 });
 
 
-
 app.MapControllers();
-
 
 
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
 
-
-
-
-
-//string connectionString = "mongodb://127.0.0.1:27017";
-//string databaseName = "reber_db";
-//string collectionName = "shakes";
-
-//var client = new MongoClient(connectionString);
-//var db = client.GetDatabase(databaseName);
-//var collection = db.GetCollection<Shake>(collectionName);
-
-//var shake = new ShakeModel { Name = "chocolate" };
-
-//await collection.InsertOneAsync(shake);
-
-//var results = await collection.FindAsync(_ => true);
-//foreach (var result in results.ToList())
-//{
-//    Console.WriteLine($"{result.Id} : {result.Name}");
-//}
 
 
 

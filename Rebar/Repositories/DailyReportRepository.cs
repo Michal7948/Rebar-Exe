@@ -17,7 +17,7 @@ namespace Repositories
             _dailyReport.InsertOne(objToCreate);
         }
 
-        public void Delete(Guid id)
+        public void Delete(string id)
         {
             _dailyReport.DeleteOne(dailyReport => dailyReport.Id == id);
         }
@@ -27,12 +27,12 @@ namespace Repositories
             return _dailyReport.Find(dailyReport => true).ToList();
         }
 
-        public DailyReport GetById(Guid id)
+        public DailyReport GetById(string id)
         {
             return _dailyReport.Find(dailyReport => dailyReport.Id == id).FirstOrDefault();
         }
 
-        public void Update(Guid id, DailyReport objToUpdate)
+        public void Update(string id, DailyReport objToUpdate)
         {
             _dailyReport.ReplaceOne(dailyReport => dailyReport.Id == id, objToUpdate);
         }

@@ -16,12 +16,12 @@ namespace Services
             repo.Create(order);
         }
 
-        public void Delete(Guid id)
+        public void Delete(string id)
         {
             repo.Delete(id);
         }
 
-        public Order GetById(Guid id)
+        public Order GetById(string id)
         {
             return repo.GetById(id);
         }
@@ -31,7 +31,7 @@ namespace Services
             return repo.GetAll();
         }
 
-        public void Update(Guid id, Order order)
+        public void Update(string id, Order order)
         {
             repo.Update(id, order);
         }

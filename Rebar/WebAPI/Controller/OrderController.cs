@@ -22,7 +22,7 @@ namespace WebAPI.Controller
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Order> GetById(Guid id)
+        public ActionResult<Order> GetById(string id)
         {
             var order = service.GetById(id);
             if (order == null)
@@ -41,7 +41,7 @@ namespace WebAPI.Controller
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(Guid id, [FromBody] Order order)
+        public ActionResult Put(string id, [FromBody] Order order)
         {
             var existingOrder = service.GetById(id);
             if (existingOrder == null)
@@ -53,7 +53,7 @@ namespace WebAPI.Controller
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(string id)
         {
             var order = service.GetById(id);
             if (order == null)

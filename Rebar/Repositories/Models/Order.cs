@@ -3,7 +3,7 @@ namespace Repositories.Models
 {
     public class Order
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string ClientName { get; set; }
         public int MyProperty { get; set; }
         public List<Shake> ShakesWithPrice { get; set; }//I will add price into the list.

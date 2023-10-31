@@ -17,7 +17,7 @@ namespace Repositories
             _shake.InsertOne(objToCreate);
         }
 
-        public void Delete(Guid id)
+        public void Delete(string id)
         {
             _shake.DeleteOne(shake => shake.Id == id);
         }
@@ -27,12 +27,12 @@ namespace Repositories
            return _shake.Find(shake => true).ToList();
         }
 
-        public Shake GetById(Guid id)
+        public Shake GetById(string id)
         {
             return _shake.Find(shake => shake.Id == id).FirstOrDefault();
         }
 
-        public void Update(Guid id,Shake objToUpdate)
+        public void Update(string id,Shake objToUpdate)
         {
             _shake.ReplaceOne(shake => shake.Id == id,objToUpdate);
         }

@@ -4,9 +4,9 @@ namespace Services
     public interface IServices<T>
     {
         List<T> GetList();
-        T GetById(Guid id);
+        T GetById(string id);
         void Create(T shake);
-        void Update(Guid id, T shake);
-        void Delete(Guid id);
+        void Update(string id, T shake);
+        void Delete(string id);
     }
 }

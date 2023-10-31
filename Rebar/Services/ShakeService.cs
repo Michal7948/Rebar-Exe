@@ -18,12 +18,12 @@ namespace Services
             
         }
 
-        public void Delete(Guid id)
+        public void Delete(string id)
         {
             repo.Delete(id);
         }
 
-        public Shake GetById(Guid id)
+        public Shake GetById(string id)
         {
             return repo.GetById(id);
         }
@@ -33,7 +33,7 @@ namespace Services
             return repo.GetAll();
         }
 
-        public void Update(Guid id,Shake shake)
+        public void Update(string id,Shake shake)
         {
             repo.Update(id, shake);
         }

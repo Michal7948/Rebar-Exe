@@ -19,7 +19,7 @@ namespace Repositories
             return _order.Find(shake => true).ToList();
         }
 
-        public Order GetById(Guid id)
+        public Order GetById(string id)
         {
             return _order.Find(shake => shake.Id == id).FirstOrDefault();
         }
@@ -29,12 +29,12 @@ namespace Repositories
             _order.InsertOne(objToCreate);
         }
 
-        public void Update(Guid id, Order objToUpdate)
+        public void Update(string id, Order objToUpdate)
         {
             _order.ReplaceOne(shake => shake.Id == id, objToUpdate);
         }
 
-        public void Delete(Guid id)
+        public void Delete(string id)
         {
             _order.DeleteOne(shake => shake.Id == id);
         }

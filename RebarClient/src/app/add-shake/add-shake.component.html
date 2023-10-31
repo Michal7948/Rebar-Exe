@@ -1,0 +1,23 @@
+<p>add-shake works!</p>
+
+
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="form-group">
+    <label for="">Name:</label>
+    <input class="form-control" type="text" formControlName="name" required ><br>
+    <label for="">Description:</label>
+    <input class="form-control" type="text" formControlName="description" required ><br>
+    <label for="">Price:</label><br>
+    <label for="">Size S:</label>
+    <input class="form-control" type="number" formControlName="priceSizeS" required><br>
+    <label for="">Size M:</label>
+    <input class="form-control" type="number" formControlName="priceSizeM" required><br>
+    <label for="">Size L:</label>
+    <input class="form-control" type="number" formControlName="priceSizeL" required><br>
+    <input class="form-control" type="submit" value="Create shake" [disabled]="!form.valid">
+  </div>
+</form>
+
+
+
+

@@ -23,7 +23,7 @@ namespace WebAPI.Controller
         
 
         [HttpGet("{id}")]
-        public ActionResult<Shake> GetById(Guid id)
+        public ActionResult<Shake> GetById(string id)
         {
             var shake = service.GetById(id);
             if(shake == null)
@@ -42,7 +42,7 @@ namespace WebAPI.Controller
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(Guid id ,[FromBody] Shake shake)
+        public ActionResult Put(string id ,[FromBody] Shake shake)
         {
             var existingShake = service.GetById(id);
             if (existingShake == null)
@@ -54,7 +54,7 @@ namespace WebAPI.Controller
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(string id)
         {
             var shake = service.GetById(id);
             if (shake == null)

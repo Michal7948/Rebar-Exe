@@ -3,7 +3,7 @@ namespace Repositories.Models
 {
     public class Shake
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Id { get; set; }= Guid.NewGuid().ToString();
         public string Name { get; set; }//must be of menu.
         public string Description { get; set; }
         public double PriceSizeL { get; set; }

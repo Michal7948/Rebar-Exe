@@ -16,12 +16,12 @@ namespace Services
             repo.Create(dailyReport);
         }
 
-        public void Delete(Guid id)
+        public void Delete(string id)
         {
             repo.Delete(id);
         }
 
-        public DailyReport GetById(Guid id)
+        public DailyReport GetById(string id)
         {
             return repo.GetById(id);
         }
@@ -31,7 +31,7 @@ namespace Services
             return repo.GetAll();
         }
 
-        public void Update(Guid id, DailyReport dailyReport)
+        public void Update(string id, DailyReport dailyReport)
         {
             repo.Update(id, dailyReport);
         }

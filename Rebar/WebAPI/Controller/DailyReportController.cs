@@ -23,7 +23,7 @@ namespace WebAPI.Controller
 
 
         [HttpGet("{id}")]
-        public ActionResult<DailyReport> GetById(Guid id)
+        public ActionResult<DailyReport> GetById(string id)
         {
             var dailyReport = service.GetById(id);
             if (dailyReport == null)
@@ -42,7 +42,7 @@ namespace WebAPI.Controller
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(Guid id, [FromBody] DailyReport dailyReport)
+        public ActionResult Put(string id, [FromBody] DailyReport dailyReport)
         {
             var existingDailyReport = service.GetById(id);
             if (existingDailyReport == null)
@@ -54,7 +54,7 @@ namespace WebAPI.Controller
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(string id)
         {
             var dailyReport = service.GetById(id);
             if (dailyReport == null)

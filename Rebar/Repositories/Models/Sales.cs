@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Repositories.Models
 {
-    internal class Sales
+    public class Sales
     {
+        public string Description { get; set; }
+        public double DiscountPercentage { get; set; }
+
     }
 }

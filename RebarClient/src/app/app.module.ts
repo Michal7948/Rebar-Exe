@@ -13,6 +13,11 @@ import { ShakeService } from './services/shake.service';
 import { AddShakeComponent } from './add-shake/add-shake.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OrdersComponent } from './orders/orders.component';
+import { OrderService } from './services/order.service';
+import { CreateOrderComponent } from './create-order/create-order.component';
+import { AllPageFormComponent } from './all-page-form/all-page-form.component';
+import { AddShakeOrderComponent } from './add-shake-order/add-shake-order.component';
+import { MessageCreateOrderComponent } from './message-create-order/message-create-order.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,11 @@ import { OrdersComponent } from './orders/orders.component';
     MenuComponent,
     AddShakeComponent,
     NotFoundComponent,
-    OrdersComponent
+    OrdersComponent,
+    CreateOrderComponent,
+    AllPageFormComponent,
+    AddShakeOrderComponent,
+    MessageCreateOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +42,7 @@ import { OrdersComponent } from './orders/orders.component';
   ],
   providers: [
     ShakeService,
+    OrderService,
     NgModule
   ],
   bootstrap: [AppComponent]

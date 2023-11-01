@@ -3,8 +3,7 @@ namespace Repositories.Models
 {
     public class DailyReport
     {
-        public string Id { get; set; } //= Guid.NewGuid();
-        //public string Id { get; set; }
+        public string Id { get; } 
         public string Date { get; set; } //= DateOnly.FromDateTime(DateTime.Now);
         public int OrdersAmount { get; set; }
         public double TotalRevenue { get; set; }

@@ -1,0 +1,21 @@
+<h1 class="h1">Add shake to order</h1>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-group">
+    <label for="shakes">Choose a shake:</label>
+    <select class="form-control" id="shakes" name="shakes" formControlName="shakeName" >
+      <option *ngFor="let shake of shakesList" value="shake.id">{{shake.name}}</option>
+    </select>
+    <label for="shakes">Choose a size:</label>
+    <select class="form-control" id="shakes" name="shakes" formControlName="shakeSize" >
+      <option  value="shake.priceSizeS">size S </option>
+      <option  value="shake.priceSizeM">size M </option>
+      <option  value="shake.priceSizeL">size L </option>
+    </select>
+    <label for="">Amount:</label>
+    <input class="form-control" type="number" formControlName="shakeAmount"  required maxlength="{{this.maxSumShakes}}"><br>
+    <input class="form-control"  type="submit"  value="Add shake"  [disabled]="!form.valid">
+  </div>
+</form>
+<button class="create_btn btn btn-outline-secondary "  routerLink="/inputs/createOrder" routerLinkActive="active">finish</button>
+
+

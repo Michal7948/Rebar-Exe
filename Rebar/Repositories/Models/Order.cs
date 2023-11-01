@@ -3,13 +3,17 @@ namespace Repositories.Models
 {
     public class Order
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get;} 
         public string ClientName { get; set; }
-        public int MyProperty { get; set; }
-        public List<Shake> ShakesWithPrice { get; set; }//I will add price into the list.
+        public List<ShakeForOrder> ShakesWithPrice { get; set; }
         public double sumPriceAllShakesList { get; set; }
         public DateTime DateOrder { get; set; }
-        // Discounts and promotions (if any)
+        public List<Sales> Sales { get; set; }
+
+        public Order()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
 
     }
 }

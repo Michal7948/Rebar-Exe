@@ -6,3 +6,23 @@
   margin: 1%;
   padding: 1%;
 }
+
+
+.create_btn{
+  position: fixed;
+  top: 2;
+  width: 15%;
+  background: white;
+  color: #738f54;
+  margin: 1%;
+  padding: 1%;
+}
+
+.create_btn:hover{
+  background: #738f54;
+  color: white;
+}
+
+.title{
+  text-align: center;
+}

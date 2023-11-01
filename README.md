@@ -12,8 +12,9 @@
 ### Create order
 ![bandicam 2023-11-01 17-09-17-993](https://github.com/Michal7948/Rebar-Exe/assets/108341249/702b9eda-a023-477b-9753-85f39ed8c06c)
 
-### Daily report (Of course you can enter with a password only)
-![bandicam 2023-11-01 17-09-17-993](https://github.com/Michal7948/Rebar-Exe/assets/108341249/aef9e0f0-9fb8-4103-831a-c363d3f5c867)
+### Daily report (of course you can enter with a password only)
+![bandicam 2023-11-01 17-05-29-806](https://github.com/Michal7948/Rebar-Exe/assets/108341249/ada3e3a9-e2b3-4ca8-987d-e541299e998e)
+
 
 ### Page not found
 ![image](https://github.com/Michal7948/Rebar-Exe/assets/108341249/9ae9eec3-3fec-44be-9f0c-b04584bd7465)

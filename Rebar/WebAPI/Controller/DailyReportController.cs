@@ -37,7 +37,6 @@ namespace WebAPI.Controller
         public ActionResult Post([FromBody] DailyReport dailyReport)
         {
             service.Create(dailyReport);
-            //return CreatedAtAction(nameof(GetById), new { id = dailyReport.Id }, dailyReport);
             return Ok($"daily report with created");
         }
 

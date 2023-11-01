@@ -36,7 +36,6 @@ namespace WebAPI.Controller
         public ActionResult Post([FromBody] Order order)
         {
             service.Create(order);
-            //return CreatedAtAction(nameof(GetById), new { id = order.Id }, order);
             return Ok($"Order with created");
         }
 

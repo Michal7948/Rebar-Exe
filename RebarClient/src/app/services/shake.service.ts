@@ -26,7 +26,6 @@ export class ShakeService {
     console.log(shake);
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
     return this.http.post(this.baseUrl,shake,httpOptions);
-    //return this.http.post(`${this.baseUrl}`, shake, httpOptions);
   }
 
 

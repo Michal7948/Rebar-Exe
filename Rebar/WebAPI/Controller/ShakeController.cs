@@ -37,7 +37,6 @@ namespace WebAPI.Controller
         public ActionResult Post([FromBody] Shake shake)
         {
             service.Create(shake);
-            //return CreatedAtAction(nameof(GetById), new { id = shake.Id }, shake);
             return Ok($"Shake with created");
         }
 

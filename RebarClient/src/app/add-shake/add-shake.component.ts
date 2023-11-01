@@ -11,7 +11,6 @@ import { ShakeService } from '../services/shake.service';
 export class AddShakeComponent {
   shake:Shakes;
   form:FormGroup=new FormGroup({});
-  //idNumberForm="";
   shakesList:Shakes[]=[];
   idExists=false;
   

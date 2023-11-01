@@ -14,11 +14,7 @@ builder.Services.AddSingleton<IRebarDatabaseSettings>(sp =>
 builder.Services.AddSingleton<IMongoClient>(s =>
     new MongoClient(builder.Configuration.GetValue<string>("RebarDatabaseSettings:ConnectionString")));
 
-//builder.Services.AddScoped<IShakeRepository, ShakeRepository>();
-//builder.Services.AddScoped<IShakeService, ShakeService>();
-
 builder.Services.AddControllers();
-//builder.Services.AddCors();
 builder.Services.AddServices();
 
 builder.Services.AddEndpointsApiExplorer();

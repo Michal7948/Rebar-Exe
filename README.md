@@ -18,4 +18,9 @@
 ### Page not found
 ![image](https://github.com/Michal7948/Rebar-Exe/assets/108341249/9ae9eec3-3fec-44be-9f0c-b04584bd7465)
 
+### The project was written in:
+#### Server Side - C# .net core webAPI
+#### Client side -Angular
+#### MongoDB database
+
 ### enjoy......

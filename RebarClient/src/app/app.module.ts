@@ -18,6 +18,8 @@ import { CreateOrderComponent } from './create-order/create-order.component';
 import { AllPageFormComponent } from './all-page-form/all-page-form.component';
 import { AddShakeOrderComponent } from './add-shake-order/add-shake-order.component';
 import { MessageCreateOrderComponent } from './message-create-order/message-create-order.component';
+import { AdminAuthenticationComponent } from './admin-authentication/admin-authentication.component';
+import { DailyReportComponent } from './daily-report/daily-report.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MessageCreateOrderComponent } from './message-create-order/message-crea
     CreateOrderComponent,
     AllPageFormComponent,
     AddShakeOrderComponent,
-    MessageCreateOrderComponent
+    MessageCreateOrderComponent,
+    AdminAuthenticationComponent,
+    DailyReportComponent
   ],
   imports: [
     BrowserModule,

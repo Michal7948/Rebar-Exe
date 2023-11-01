@@ -13,6 +13,8 @@ namespace Services
         }
         public void Create(Order order)
         {
+
+            order.DateOrder = DateTime.Now;
             repo.Create(order);
         }
 

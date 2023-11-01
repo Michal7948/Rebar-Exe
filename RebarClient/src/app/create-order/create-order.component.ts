@@ -39,6 +39,8 @@ export class CreateOrderComponent {
     this.form=new FormGroup({
       clientName:new FormControl("")
     });
+    this.allPrice=this.orders_s.getSumPriceAllShakesList();
+
   }
 
   onSubmit(form:FormGroup){
@@ -51,7 +53,7 @@ export class CreateOrderComponent {
 
     this.orders_s.sumPriceAllShakesList=0;
     this.orders_s.shakesOrderWithPrice=[];
-    
+
     }
   }
 

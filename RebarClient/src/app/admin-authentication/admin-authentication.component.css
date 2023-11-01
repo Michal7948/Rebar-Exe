@@ -1,0 +1,16 @@
+.create_btn{
+  width: 50%;
+  background: white;
+  color: #738f54;
+  margin: 1%;
+  padding: 1%;
+}
+
+.create_btn:hover{
+  background: #738f54;
+  color: white;
+}
+
+input{
+  width: 50%;
+}

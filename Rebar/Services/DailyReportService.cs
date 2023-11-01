@@ -13,6 +13,7 @@ namespace Services
         }
         public void Create(DailyReport dailyReport)
         {
+            dailyReport.Date = DateOnly.FromDateTime(DateTime.Now).ToString();
             repo.Create(dailyReport);
         }
 

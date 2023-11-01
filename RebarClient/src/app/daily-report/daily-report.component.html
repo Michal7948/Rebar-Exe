@@ -1,0 +1,22 @@
+<table class="tb table table-striped table-hover">
+  <thead>
+    <tr class="flex-row-reverse">
+      <th>Date</th>
+      <th>Order amount</th>
+      <th>TotalRevenue</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let daily of dailyReportsList">
+    <tr  class="flex-row-reverse">
+      <td>{{daily.date}}</td>
+      <td>{{daily.ordersAmount}}</td>
+      <td>{{daily.totalRevenue}}$</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+

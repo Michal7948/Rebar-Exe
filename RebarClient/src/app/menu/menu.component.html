@@ -1,0 +1,14 @@
+
+<button class="create_btn btn btn-outline-secondary "  routerLink="/inputs/addShake" routerLinkActive="active">Add shake</button>
+
+<h1 class="title">Menu</h1>
+<div class="one_shake" *ngFor="let shake of shakesList" >
+  <h2>{{shake.name}}</h2>
+  <p>{{shake.description}}</p>
+  <p>Price:</p>
+  <ul>
+    <li>size S: {{shake.priceSizeS}}</li>
+    <li>size M: {{shake.priceSizeM}}</li>
+    <li>size L: {{shake.priceSizeL}}</li>
+  </ul>
+</div>

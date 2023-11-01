@@ -1,0 +1,12 @@
+<h1 class="h1">Create order</h1>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-group">
+    <label for="">Client name:</label>
+    <input class="form-control" type="text" formControlName="clientName" required><br>
+    <p class="p-small">If you would like to order another shake click this button again</p>
+    <button class="create_btn btn btn-outline-secondary "  routerLink="/inputs/addShakeOrder" routerLinkActive="active">Add shake</button>
+    <input class="form-control"  value="Create order " [disabled]="!form.valid">
+  
+  </div>
+</form>
+<button class="create_btn btn btn-outline-secondary "  routerLink="/inputs/message" routerLinkActive="active">payment</button>

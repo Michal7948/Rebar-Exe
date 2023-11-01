@@ -1,0 +1,48 @@
+.all-div{
+  display: grid;
+  grid-template-columns: 55% auto;
+}
+
+.all-form{
+  border: 2px solid #738f54;
+  width: 95%;
+  margin: 2%;
+}
+
+.form{
+  margin: 5%;
+  
+}
+
+input{
+  width: 80%;
+}
+
+.img-div{
+  text-align: end;
+  z-index: -1;
+}
+
+.h1{
+  text-align: center;
+}
+
+
+.create_btn{
+  width: 80%;
+  background: white;
+  color: #738f54;
+  margin: 1%;
+  padding: 1%;
+}
+
+.create_btn:hover{
+  background: #738f54;
+  color: white;
+}
+
+.p-small{
+  font-size: small;
+}
+
+
